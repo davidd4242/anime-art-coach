@@ -38,6 +38,14 @@
 |:---:|:---:|
 | [![案例2全身黑白线条检测](examples/maps/case-2-line-mask.png)](examples/maps/case-2-line-mask.png) | [![案例2全身彩色线条分级](examples/maps/case-2-line-tiers.png)](examples/maps/case-2-line-tiers.png) |
 
+### 案例2 的单目相对深度
+
+![案例2原图和相对深度估计，亮色表示较近，暗色表示较远](examples/maps/case-2-depth-view.png)
+
+沿小腿往下看，模型把交叠处的前腿估得更近，右侧后腿较暗。尾巴的中段亮度有变化，尤其是后腿附近，单张插画对距离的约束有限。图中的远近只在这张图内比较，黑色背景表示没有前景读数。
+
+这张图用独立的 Depth Anything V2 Small 从案例2的原始透明 PNG 推理生成。输入先合成白底，使用官方预处理器（短边 518），预测结果经双三次插值还原为 1024 × 1536。用原始透明度 ≥ 128 的前景像素取第 1 至第 99 百分位做线性拉伸，超出范围的读数截到端点。16 位图中 0 留给背景，1 至 65535 由远到近。日常绘图流程仍使用原有的二维分层。[下载原尺寸 16 位深度 PNG](examples/maps/case-2-relative-depth.png) · [模型与本次所用版本](https://huggingface.co/depth-anything/Depth-Anything-V2-Small-hf/tree/5426e4f0f36572d16453bbda7a8389317b1bef99)
+
 ## 局部识别示意图
 
 前六张图的绿色框标出**原始 PNG 上的取样位置**。中栏是原图局部，右栏是交付成品的同一位置。两栏先对齐到交付图的显示尺寸，再等倍率放大；边缘清晰度也会受到 JPG 压缩影响。图下坐标按原图像素给出，可直接用于 DSH 的 `--crop 左 上 右 下`。
