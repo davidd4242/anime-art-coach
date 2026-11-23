@@ -102,6 +102,8 @@
 
 下载 Windows x64 便携包后，右键选择“全部解压”，双击包根目录的 **Run.cmd** 选择图片，也可以把一张图片拖到它上面。成图在 `runs\本次编号\pass-1\result.png`。**Review.cmd** 会额外生成网格、变化读数和同位置裁片。包中已包含 Python 和日常 CPU 绘图依赖，适用于 Windows 10/11 Intel 或 AMD 64 位系统。[Windows 操作手册](windows/README.md)
 
+从 GitHub 下载的便携 ZIP 已在 Windows Server 2022 x64 上用内置解释器完成两种模式的两遍出图和裁片自检。[原生测试记录](https://github.com/davidd4242/anime-art-coach/actions/runs/45244488990)
+
 ## 第一次运行
 
 **1. 准备环境。** 解压所选版本，进入能看到 `requirements.txt` 的目录。以下命令适用于 macOS / Linux。发行版在 macOS arm64、Python 3.9.6 的干净环境中做过安装验证。Windows 的解释器调用方式见[操作手册](docs/USAGE.md)。
