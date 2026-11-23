@@ -4,7 +4,7 @@
 
 项目从一个具体问题出发：一张立绘的腿上有几条重复长亮纹，可以合并成较大的受光面，但膝盖的转折、两条腿交叠的投影仍要保住。同样，领口布料可以画得简洁，衣服上的穿绳孔和徽章笔触却可能只有几像素宽。这套算法把这些部位分开处理，最后把判断交给看图的人。
 
-[下载 Codex 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-codex.zip) · [下载 DSH 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-dsh.zip) · [版本与校验文件](https://github.com/davidd4242/anime-art-coach/releases/latest)
+[Windows x64 便携版](https://github.com/davidd4242/anime-art-coach/releases/download/windows-v1.0.0/anime-art-coach-windows-x64.zip) · [下载 Codex 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-codex.zip) · [下载 DSH 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-dsh.zip) · [版本与校验文件](https://github.com/davidd4242/anime-art-coach/releases/latest)
 
 ## 先看实际效果
 
@@ -97,6 +97,10 @@
 | 自己写脚本，希望直接控制强度、预设或保护蒙版 | 任一版 | 两个包都包含相同的 Python 内核和命令行入口 |
 
 两个版本的区别在操作和复核方式。在同一环境里用同一原图和参数，两个入口调用同一套渲染规则。日常渲染在本地 CPU 上完成，无需模型 API 密钥。若另行调用 DSH 的在线模型写复核意见，用量取决于自己的 DSH 配置。
+
+## Windows 快速开始
+
+下载 Windows x64 便携包后，右键选择“全部解压”，双击包根目录的 **Run.cmd** 选择图片，也可以把一张图片拖到它上面。成图在 `runs\本次编号\pass-1\result.png`。**Review.cmd** 会额外生成网格、变化读数和同位置裁片。包中已包含 Python 和日常 CPU 绘图依赖，适用于 Windows 10/11 Intel 或 AMD 64 位系统。[Windows 操作手册](windows/README.md)
 
 ## 第一次运行
 

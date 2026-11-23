@@ -1,5 +1,7 @@
 # 安装、处理和检查
 
+Windows 10 / 11 x64 可以直接下载内置运行环境的便携包，解压后双击 Run.cmd。下载链接和两种启动方式见[Windows 使用说明](../windows/README.md)。
+
 **环境。** 本次从公开 PyPI 安装四项直接依赖，在 macOS arm64、Python 3.9.6 的干净环境中验证。建议使用能安装这些 wheel 的 64 位 Python。Windows PowerShell 可以先运行 `py -m venv .venv`，再用 `.\.venv\Scripts\python.exe` 代替下文中的 `python`。目录名有空格时加引号。运行位置是解压后的项目根目录。
 
 ## 1. 安装并确认解释器
