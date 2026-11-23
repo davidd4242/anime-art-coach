@@ -106,7 +106,8 @@ def _run_worker():
         name = upstream.MODELS["esrgan"][0]
         model_path = Path(models_dir) / name
         if not model_path.is_file():
-            raise SystemExit(f"Local model required at {model_path}. {upstream.manual_hint('esrgan', models_dir)}")
+            raise SystemExit(f"Download {upstream.MODELS['esrgan'][1]} to {model_path}, then retry. "
+                             f"{upstream.manual_hint('esrgan', models_dir)}")
         data = model_path.read_bytes()
         digest = hashlib.sha256(data).hexdigest()
         if digest != upstream.SHA256[name]:

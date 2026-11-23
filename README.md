@@ -6,7 +6,7 @@
 
 项目从一个具体问题出发：一张立绘的腿上有几条重复长亮纹，可以合并成较大的受光面，但膝盖的转折、两条腿交叠的投影仍要保住。同样，领口布料可以画得简洁，衣服上的穿绳孔和徽章笔触却可能只有几像素宽。这套算法把这些部位分开处理，最后把判断交给看图的人。
 
-[Windows x64 便携版](https://github.com/davidd4242/anime-art-coach/releases/download/windows-v1.0.0/anime-art-coach-windows-x64.zip) · [下载 Codex 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-codex.zip) · [下载 DSH 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-dsh.zip) · [版本与校验文件](https://github.com/davidd4242/anime-art-coach/releases/latest)
+[Windows x64 便携版](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.1/anime-art-coach-windows-x64.zip) · [下载 Codex 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-codex.zip) · [下载 DSH 版](https://github.com/davidd4242/anime-art-coach/releases/latest/download/anime-art-coach-dsh.zip) · [版本与校验文件](https://github.com/davidd4242/anime-art-coach/releases/latest)
 
 ## 先看实际效果
 

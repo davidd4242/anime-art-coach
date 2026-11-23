@@ -1,6 +1,8 @@
 # Windows 便携版
 
-[下载 Windows x64 ZIP](https://github.com/davidd4242/anime-art-coach/releases/download/windows-v1.0.0/anime-art-coach-windows-x64.zip)
+简体中文 · [English](README.en.md)
+
+[下载 Windows x64 ZIP](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.1/anime-art-coach-windows-x64.zip)
 
 适用 Windows 10 / 11 x64（Intel 或 AMD 64 位）。默认绘图和复核在本机 CPU 上运行。便携包包含 Python、数值库、图像库，以及 Codex / DSH 共用的日常渲染内核。使用前请把 ZIP 全部解压到自己的可写目录，如 `C:\ArtCoach`。
 

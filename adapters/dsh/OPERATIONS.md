@@ -1,5 +1,7 @@
 # DSH 操作书：先运行，再识别，最后判断
 
+简体中文 · [English](OPERATIONS.en.md)
+
 使用者可以把这份文件交给 DeepSeek Harness 的模型。工具把相同输入按固定规则渲染；模型的任务是选择检查位置、阅读结果、准确表达不确定性。没有图像输入能力时，仍能完成文件、尺寸和参数核对。
 
 ## 初次使用者
@@ -14,7 +16,7 @@ python adapters/dsh/run.py examples/momo.png runs/momo-review --passes 2 \
 ```
 
 4. 打开 runs/momo-review。grid.png 给出全身位置，evidence.json 列出每格边界、数值和裁片名。三个 crop 文件按写入顺序排列，每张从左到右是原图、第一遍、第二遍。
-5. 需要调用已配置的模型时，可在项目根目录执行 `(cd runs/momo-review && sh ../../adapters/dsh/review.sh)`。这一步向 DSH 提交只读任务，是否能查看图像取决于当前 profile 的工具，可能产生供应商用量。只做本地处理可在第 4 步结束。若 dsh 命令提示缺运行时，可先直接在桌面 DSH 打开输出目录并输入下方任务，Python 入口可独立运行。如果现有启动器引用了缺失的 Node，而系统 Node 与已安装的 DSH 包可用，先用 node 运行该包的 lib/bin.js --help 检查，再把 DSH_CLI_JS 设为该 bin.js 的绝对路径；review.sh 会沿用此入口。
+5. 需要调用已配置的模型时，可在项目根目录执行 `(cd runs/momo-review && sh ../../adapters/dsh/review.sh)`。这一步向 DSH 提交只读任务，是否能查看图像取决于当前 profile 的工具，可能产生供应商用量。只做本地处理可在第 4 步结束。若 dsh 命令提示缺运行时，可先直接在桌面 DSH 打开输出目录并输入下方任务，Python 入口可独立运行。英文复核时，在 review.sh 后加参数 `en`。如果现有启动器引用了缺失的 Node，而系统 Node 与已安装的 DSH 包可用，先用 node 运行该包的 lib/bin.js --help 检查，再把 DSH_CLI_JS 设为该 bin.js 的绝对路径；review.sh 会沿用此入口。
 
 ## 交给模型的逐步任务
 

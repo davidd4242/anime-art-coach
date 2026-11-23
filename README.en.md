@@ -6,7 +6,7 @@ Anime Art Coach processes an existing anime illustration on your own computer. G
 
 The project started with a practical question. Can you soften a long highlight on a leg and keep the bend of the knee? The same question applies at a smaller scale. A collar may read well with simpler shading, while losing two pink strokes can erase the face on a badge.
 
-[Windows x64 portable download](https://github.com/davidd4242/anime-art-coach/releases/download/windows-v1.0.0/anime-art-coach-windows-x64.zip) · [Codex download](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.0/anime-art-coach-codex.zip) · [DSH download](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.0/anime-art-coach-dsh.zip) · [Releases and checksums](https://github.com/davidd4242/anime-art-coach/releases)
+[Windows x64 portable download](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.1/anime-art-coach-windows-x64.zip) · [Codex download](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.1/anime-art-coach-codex.zip) · [DSH download](https://github.com/davidd4242/anime-art-coach/releases/download/v1.0.1/anime-art-coach-dsh.zip) · [Releases and checksums](https://github.com/davidd4242/anime-art-coach/releases)
 
 ## Two illustrations, before and after
 
@@ -16,13 +16,13 @@ In both figures, **the left column shows the original transparent PNG and the ri
 
 Look at the blue fabric just above and to the left of the black lacing. In the original, a bright lip along the collar darkens gradually into the fabric. The finished image flattens that transition. The triangular opening at the top and the square opening below are still legible. A separate, optional export for this particular portrait restores some of the original collar shadow.
 
-![Case 1, original at left and delivered image at right, with matching collar crops](examples/momo-compare.png)
+![Case 1, original at left and delivered image at right, with matching collar crops](examples/en/momo-compare.png)
 
 ### Case 2
 
 Follow the front leg from the garter to the knee. Softening the long highlight gives the lit side of the leg a more continuous shape. The change of plane at the knee and the shadow on the rear leg still give the pose depth. Then look back at the gold stars against the navy garter. Those small shapes matter just as much as the broad areas of skin.
 
-![Case 2, original and delivered illustration, with details of the garter, leg and knee](examples/starfish-compare.png)
+![Case 2, original and delivered illustration, with details of the garter, leg and knee](examples/en/starfish-compare.png)
 
 ## Choose an edition
 
@@ -36,7 +36,7 @@ Local rendering needs no API key. Calling an online model to interpret DSH’s r
 
 ### Windows quick start
 
-On Windows 10 or 11 with a 64-bit Intel or AMD processor, extract the entire portable ZIP. Double-click **Run.cmd** to select an image, or drop one image onto the launcher. Open `runs\<run ID>\pass-1\result.png` for the result. Use **Review.cmd** for the grid and detail crops. The released ZIP passed a native Windows Server 2022 x64 test using its bundled interpreter to run both modes for two passes. [Windows test run](https://github.com/davidd4242/anime-art-coach/actions/runs/45244488990) · [Windows guide (Chinese)](windows/README.md)
+On Windows 10 or 11 with a 64-bit Intel or AMD processor, extract the entire portable ZIP. Double-click **Run.cmd** to select an image, or drop one image onto the launcher. Open `runs\<run ID>\pass-1\result.png` for the result. Use **Review.cmd** for the grid and detail crops. The released ZIP passed a native Windows Server 2022 x64 test using its bundled interpreter to run both modes for two passes. [Windows test run](https://github.com/davidd4242/anime-art-coach/actions/runs/45244488990) · [Windows guide](windows/README.en.md)
 
 ### Python quick start
 
@@ -68,7 +68,7 @@ Open `runs/first/pass-1/result.png`. Compare the whole figure at the same displa
 4. **Recover small marks.** The renderer compares a provisional result with the source to find lost strokes, low-contrast prints, repeated motifs, and curved metal rims. Where protection applies, it restores a weighted contribution from the original layers.
 5. **Keep a record.** Each pass writes the render, its component layers, diagnostics, and a report. In a two-pass run, the second pass reads the first pass’s actual output and checks the associated protection mask against its recorded hashes.
 
-The daily preset is `artist` at strength `1`, with automatic detail protection enabled and optional denoising off. If a fabric or skin region looks too flat, try a lower strength from the original, for example `python scripts/redraw.py input.png -o runs/gentler --strength 0.65`. [Parameter and denoising guide (Chinese)](docs/USAGE.md)
+The daily preset is `artist` at strength `1`, with automatic detail protection enabled and optional denoising off. If a fabric or skin region looks too flat, try a lower strength from the original, for example `python scripts/redraw.py input.png -o runs/gentler --strength 0.65`. [Parameter and denoising guide](docs/USAGE.en.md)
 
 ## Read the diagnostic images
 
@@ -88,7 +88,7 @@ Follow the skirt hem or a sandal strap across both images. On the left, black ma
 
 ### An independent depth estimate for Case 2
 
-![Source beside its relative depth estimate, with lighter tones closer](examples/maps/case-2-depth-view.png)
+![Source beside its relative depth estimate, with lighter tones closer](examples/en/maps/case-2-depth-view.png)
 
 The model places the overlapping front leg closer than the rear leg. Depth along the tail is more ambiguous. Brightness ranks estimated distance within this image, and black marks the background.
 
@@ -100,37 +100,37 @@ In the six guides below, the green rectangle locates the crop on the original PN
 
 **Case 1 · Is the black strap broken, or did the blue cloth inside the opening get lighter?** Trace the edges around the triangular and square openings. If both shapes close and the crossing is still connected, record the cloth change separately.
 
-![Case 1 location and matching crops of the black collar lacing](examples/guides/case-1-collar.png)
+![Case 1 location and matching crops of the black collar lacing](examples/en/guides/case-1-collar.png)
 
 <details>
 <summary>Case 1 · Pink badge marks and the face on the bandage</summary>
 
-![Two pink marks on the rabbit badge, distinct from the pink inner ears](examples/guides/case-1-badge.png)
+![Two pink marks on the rabbit badge, distinct from the pink inner ears](examples/en/guides/case-1-badge.png)
 
-![Faint ear tips and lower outline of the face on the blue bandage](examples/guides/case-1-patch.png)
+![Faint ear tips and lower outline of the face on the blue bandage](examples/en/guides/case-1-patch.png)
 
 </details>
 
 **Case 2 · Can you tell which leg is in front after the highlight is softened?** Compare the long stripe with the turn beneath the knee and the darker plane of the rear leg.
 
-![Case 2 location and matching crops of the front knee and rear leg](examples/guides/case-2-knee.png)
+![Case 2 location and matching crops of the front knee and rear leg](examples/en/guides/case-2-knee.png)
 
 <details>
 <summary>Case 2 · Shells at the hem and gold motifs on the garter</summary>
 
-![Gold shell, starfish and small pale shell at the skirt hem](examples/guides/case-2-hem.png)
+![Gold shell, starfish and small pale shell at the skirt hem](examples/en/guides/case-2-hem.png)
 
-![Gold motifs on a navy band against white ruffles](examples/guides/case-2-garter.png)
+![Gold motifs on a navy band against white ruffles](examples/en/guides/case-2-garter.png)
 
 </details>
 
 **What did the algorithm actually select?** Case 1 matches a previously reviewed protection mask. Its white region covers the badge and both pink marks. A new portrait goes through automatic selection and can produce a different mask.
 
-![Badge crop and the matching detail-protection weights, with white indicating strong protection](examples/guides/case-1-protection.png)
+![Badge crop and the matching detail-protection weights, with white indicating strong protection](examples/en/guides/case-1-protection.png)
 
 In Case 2, trace the blue boundary across the skirt panels, then look at the orange lines inside the ruffles. If a fold becomes too faint, this view can help explain how it was classified.
 
-![Skirt crop and the corresponding line classes](examples/guides/case-2-lines.png)
+![Skirt crop and the corresponding line classes](examples/en/guides/case-2-lines.png)
 
 ## Ask an assistant to review a render
 
@@ -149,7 +149,7 @@ Open `crop-01.png` through `crop-03.png` in `runs/detail-check`. Each shows the 
 
 > Compare the full figure first. In the crops, check the ear tips and dots on the bandage, the two pink marks on the badge, and the openings in the lacing. For each detail, name the crop and the first pass where you can see a change. Mark anything too small to judge. Give your full-figure preference separately. A tie is a valid result.
 
-An assistant with file access alone can verify dimensions, alpha, provenance, and crop coordinates. A person can then inspect the crops. Mean pixel change tells you where to look. [Codex workflow (Chinese)](adapters/codex/OPERATIONS.md) · [DSH workflow (Chinese)](adapters/dsh/OPERATIONS.md)
+An assistant with file access alone can verify dimensions, alpha, provenance, and crop coordinates. A person can then inspect the crops. Mean pixel change tells you where to look. [Codex workflow](adapters/codex/OPERATIONS.en.md) · [DSH workflow](adapters/dsh/OPERATIONS.en.md)
 
 ## Output files
 
@@ -165,7 +165,7 @@ An assistant with file access alone can verify dimensions, alpha, provenance, an
 
 Development used human-drawn references, 122 illustrated cards, and blind full-figure comparisons. A long highlight on a softly lit leg can be redundant, while a similar mark in strong backlight can convey volume. An actionable annotation records the coordinates, material, light direction, and the stroke’s purpose.
 
-To change a rule, reproduce a failure and pair it with a similar detail that should survive. Change one condition, rerun both passes, then evaluate on works held out from tuning. Record improvements, ties, and regressions separately. New samples reveal gaps and can guide a tested change. Adding files to a folder does not update any model weights. [Illustrated iteration method (Chinese)](docs/METHOD.md)
+To change a rule, reproduce a failure and pair it with a similar detail that should survive. Change one condition, rerun both passes, then evaluate on works held out from tuning. Record improvements, ties, and regressions separately. New samples reveal gaps and can guide a tested change. Adding files to a folder does not update any model weights. [Illustrated iteration method](docs/METHOD.en.md)
 
 ## Validation
 
@@ -174,7 +174,7 @@ To change a rule, reproduce a failure and pair it with a similar detail that sho
 - Synthetic fixtures exercise resizing, mirroring, mask precedence, and repeated processing. Human reviewers judge full figures blind and can choose a tie before inspecting crops.
 - Both assistants call the same renderer. Their ability to recognize defects or judge an illustration is a separate question. The project has no head-to-head visual benchmark for DeepSeek V4.1 Flash and Astra 6.2.
 
-[Validation and reproduction notes (Chinese)](docs/VALIDATION.md) · [Third-party software, weights and artwork (Chinese)](docs/THIRD_PARTY.md)
+[Validation and reproduction notes](docs/VALIDATION.en.md) · [Third-party software, weights and artwork](docs/THIRD_PARTY.en.md)
 
 ## A note from the author
 
