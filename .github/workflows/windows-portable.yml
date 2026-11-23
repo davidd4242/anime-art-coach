@@ -1,0 +1,27 @@
+name: Windows portable smoke test
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/windows-portable.yml"
+permissions:
+  contents: read
+jobs:
+  portable:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - name: Download and verify the published x64 package
+        shell: pwsh
+        run: |
+          $url = "https://github.com/davidd4242/anime-art-coach/releases/download/windows-v1.0.0/anime-art-coach-windows-x64.zip"
+          curl.exe --fail --location --retry 3 $url -o portable.zip
+          if ($LASTEXITCODE) { exit $LASTEXITCODE }
+          if ((Get-FileHash portable.zip).Hash -ne "3A26D7456716EF16698E0C24D21BEC1BDB34768475FB53EE211DAA2B2CE5008B") { throw "Archive digest mismatch" }
+          Expand-Archive portable.zip -DestinationPath unpacked
+      - name: Run the embedded interpreter on both pipelines
+        shell: pwsh
+        working-directory: unpacked/anime-art-coach-windows-x64
+        run: |
+          & .\runtime\python.exe -B -X utf8 .\windows\verify.py
+          exit $LASTEXITCODE
